@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "76e141f0-9a07-44a2-b7f5-c7b02b8e60dc",
+		"name": "NodeJS Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request Token Non Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"dungtang\", \"password\": \"TikiHometest@123\" }"
+				},
+				"url": {
+					"raw": "localhost:3001/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth"
+					]
+				},
+				"description": "tiki hometest"
+			},
+			"response": []
+		},
+		{
+			"name": "Request Token Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"admin\", \"password\": \"123\" }"
+				},
+				"url": {
+					"raw": "localhost:3001/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"auth"
+					]
+				},
+				"description": "tiki hometest"
+			},
+			"response": []
+		},
+		{
+			"name": "Add book with admin Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjODdmMzkwMWM5ZDQ0MDAwMDc2ZDFjNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NTI0MTM3MzMsImV4cCI6MTU1MjQxNDMzM30.7LxvtP94owasWGMUwrRdPEAXbnjl6ySLcfj537d-Ev8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3001/admin/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"admin",
+						"add"
+					]
+				},
+				"description": "Bearer"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjODdkM2U2MWM5ZDQ0MDAwMDc2ZDFjNCIsInVzZXJuYW1lIjoiZHVuZ3RhbmciLCJyb2xlIjoidXNlciIsImlhdCI6MTU1MjQ1MjczOSwiZXhwIjoxNTUyNDUyNzk5fQ.ZifnMjLl56JvUJSaCmPGteVTsacG-pOHPco1Pgbi3WU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3001",
+					"host": [
+						"localhost"
+					],
+					"port": "3001"
+				},
+				"description": "available for all logged in users"
+			},
+			"response": []
+		},
+		{
+			"name": "Update book with admin Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjODdmMzkwMWM5ZDQ0MDAwMDc2ZDFjNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NTI0NzAwNTcsImV4cCI6MTU1MjQ3MDY1N30.3h78PyasINxYmxZSNvrLJvBp0iCrDDduxgqbzgRLm-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "testing price",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "homeless",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "blah blah",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3001/admin/update/5c88a90f1c9d440000f884ce",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"admin",
+						"update",
+						"5c88a90f1c9d440000f884ce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete book with admin Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjODdmMzkwMWM5ZDQ0MDAwMDc2ZDFjNSIsInVzZXJuYW1lIjoiYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1NTI0NjAxMTYsImV4cCI6MTU1MjQ2MDcxNn0.Fu4QjiMElvstQmLklMeiMhHF2yGXN52yHgQ07HqyCmI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3001/admin/delete/5c87bb821c9d44000076d1c3",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"admin",
+						"delete",
+						"5c87bb821c9d44000076d1c3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
