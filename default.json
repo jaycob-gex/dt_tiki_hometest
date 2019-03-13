@@ -1,0 +1,17 @@
+{
+    "port": 3001,
+    "security": {
+        "tokenExpiresInMinutes" : 10,
+        "secret": "this is my secret"
+    },
+    "mongodb": {
+        "name": "hometest",
+        "booksCollection": "books",
+        "usersCollection": "users",
+        "uri": "mongodb+srv://admin:123@dt-tk-books-htdza.mongodb.net/test?retryWrites=true"
+    },
+    "roles": {
+        "admin": "admin",
+        "user": "user"
+    }
+}
