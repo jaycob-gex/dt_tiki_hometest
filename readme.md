@@ -6,7 +6,7 @@
     white list your IP address to access MongoDB on cloud
    [![whitelist](https://i.imgur.com/PrGmjOl.jpg "whitelist")](https://i.imgur.com/PrGmjOl.jpg "whitelist")
     
-3. default accounts created on mlab:
+3. default accounts created on database:
    * dungtang/TikiHometest@123 (role = 'user') --> show user page
    * admin/123 (role = 'admin') --> show admin page   
    
